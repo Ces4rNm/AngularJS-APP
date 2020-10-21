@@ -1,0 +1,54 @@
+<div id="login" class="container">
+    <style>
+        body {
+            background: #009688;
+        }
+        #login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            /*animation: colorchange 50s infinite;*/
+        }
+        #login>.row {
+            padding: 1em 3em 3em;
+            background-color: whitesmoke;
+            position: relative;
+            border-radius: 2px;
+        }
+        #login button {
+            margin: 1em 0;
+        }
+        #login span {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        @keyframes colorchange {
+          0%   {background: whitesmoke;}
+          25%  {background: #F44336;}
+          50%  {background: #795548;}
+          75%  {background: #4CAF50;}
+          100% {background: #4CAF50;}
+        }
+
+    </style>
+    <div class="row">
+        <h3>Bienvenido</h3>
+        <form ng-submit="formSubmit()" class="form">
+            <div class="input-field col s6">
+                <input ng-model="username" id="usuario" type="text" class="validate" required="">
+                <label for="usuario">Usuario</label>
+            </div>
+            <div class="input-field col s6">
+                <input ng-model="password" id="contraseña" type="password" class="validate" required="">
+                <label for="contraseña">Contraseña</label>
+            </div>
+            
+            <button class="btn waves-effect" type="submit" name="action">Iniciar Sesion
+                <i class="material-icons right">arrow_forward</i>
+            </button>
+            <span class="text-danger">{{ error }}</span>
+        </form>
+    </div>
+</div>
